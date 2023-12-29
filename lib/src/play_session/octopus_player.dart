@@ -27,6 +27,7 @@ class OctopusPlayer extends SpriteComponent
     final octopusComponent =
         SpriteAnimationComponent(animation: octopusAnimation, size: spriteSize);
     sprite = Sprite(image, srcSize: Vector2.zero());
+    add(RectangleHitbox());
     add(octopusComponent);
   }
 

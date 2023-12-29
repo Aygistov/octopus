@@ -5,7 +5,7 @@ import 'package:flutter/painting.dart';
 
 import 'octopus_player.dart';
 
-class OctopusGame extends FlameGame {
+class OctopusGame extends FlameGame with HasCollisionDetection {
   late final OctopusPlayer player;
   late final JoystickComponent joystick;
 
@@ -21,6 +21,7 @@ class OctopusGame extends FlameGame {
     player = OctopusPlayer(joystick);
 
     world.add(player);
+    world.add(ScreenHitbox());
     camera.viewport.add(joystick);
   }
 }
